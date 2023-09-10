@@ -5,6 +5,7 @@ import App from '../App';
 require('jest-fetch-mock');
 
 describe('User Posts', () => {
+   afterEach(() => jest.resetAllMocks());
   test('displays user posts', async () => {
     jest.spyOn(global, 'fetch').mockImplementationOnce(() => {
       return Promise.resolve({

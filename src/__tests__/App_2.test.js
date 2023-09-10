@@ -41,7 +41,7 @@ describe('User Comments', () => {
     });
     mockFetch.mockImplementationOnce(() => {
       return Promise.resolve({
-        json: () => Promise.resolve(comments),
+        json: () => Promise.resolve(mockComments),
       });
     });
     const firstPostComments = await screen.findByText(
