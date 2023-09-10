@@ -1,105 +1,101 @@
-const mockPosts = [
+const mockUsers = { "users": [
   {
-    userId: 1,
-    id: 1,
-    title:
-      'sunt aut facere repellat provident occaecati excepturi optio reprehenderit',
-    body: 'quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto',
+     "id":1,
+     "firstName":"Terry",
+     "lastName":"Medhurst"
   },
   {
-    userId: 1,
-    id: 2,
-    title: 'qui est esse',
-    body: 'est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla',
+     "id":2,
+     "firstName":"Sheldon",
+     "lastName":"Quigley"
   },
   {
-    userId: 1,
-    id: 3,
-    title: 'ea molestias quasi exercitationem repellat qui ipsa sit aut',
-    body: 'et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut',
+     "id":3,
+     "firstName":"Terrill",
+     "lastName":"Hills"
   },
   {
-    userId: 1,
-    id: 4,
-    title: 'eum et est occaecati',
-    body: 'ullam et saepe reiciendis voluptatem adipisci\nsit amet autem assumenda provident rerum culpa\nquis hic commodi nesciunt rem tenetur doloremque ipsam iure\nquis sunt voluptatem rerum illo velit',
+     "id":4,
+     "firstName":"Miles",
+     "lastName":"Cummerata"
   },
   {
-    userId: 1,
-    id: 5,
-    title: 'nesciunt quas odio',
-    body: 'repudiandae veniam quaerat sunt sed\nalias aut fugiat sit autem sed est\nvoluptatem omnis possimus esse voluptatibus quis\nest aut tenetur dolor neque',
+     "id":5,
+     "firstName":"Mavis",
+     "lastName":"Schultz"
   },
   {
-    userId: 1,
-    id: 6,
-    title: 'dolorem eum magni eos aperiam quia',
-    body: 'ut aspernatur corporis harum nihil quis provident sequi\nmollitia nobis aliquid molestiae\nperspiciatis et ea nemo ab reprehenderit accusantium quas\nvoluptate dolores velit et doloremque molestiae',
+     "id":6,
+     "firstName":"Alison",
+     "lastName":"Reichert"
   },
   {
-    userId: 1,
-    id: 7,
-    title: 'magnam facilis autem',
-    body: 'dolore placeat quibusdam ea quo vitae\nmagni quis enim qui quis quo nemo aut saepe\nquidem repellat excepturi ut quia\nsunt ut sequi eos ea sed quas',
+     "id":7,
+     "firstName":"Oleta",
+     "lastName":"Abbott"
   },
   {
-    userId: 1,
-    id: 8,
-    title: 'dolorem dolore est ipsam',
-    body: 'dignissimos aperiam dolorem qui eum\nfacilis quibusdam animi sint suscipit qui sint possimus cum\nquaerat magni maiores excepturi\nipsam ut commodi dolor voluptatum modi aut vitae',
+     "id":8,
+     "firstName":"Ewell",
+     "lastName":"Mueller"
   },
   {
-    userId: 1,
-    id: 9,
-    title: 'nesciunt iure omnis dolorem tempora et accusantium',
-    body: 'consectetur animi nesciunt iure dolore\nenim quia ad\nveniam autem ut quam aut nobis\net est aut quod aut provident voluptas autem voluptas',
+     "id":9,
+     "firstName":"Demetrius",
+     "lastName":"Corkery"
   },
   {
-    userId: 1,
-    id: 10,
-    title: 'optio molestias id quia eum',
-    body: 'quo et expedita modi cum officia vel magni\ndoloribus qui repudiandae\nvero nisi sit\nquos veniam quod sed accusamus veritatis error',
-  },
-];
-const mockComments = [
-  {
-    postId: 1,
-    id: 1,
-    name: 'id labore ex et quam laborum',
-    email: 'Eliseo@gardner.biz',
-    body: 'laudantium enim quasi est quidem magnam voluptate ipsam eos\ntempora quo necessitatibus\ndolor quam autem quasi\nreiciendis et nam sapiente accusantium',
-  },
-  {
-    postId: 1,
-    id: 2,
-    name: 'quo vero reiciendis velit similique earum',
-    email: 'Jayne_Kuhic@sydney.com',
-    body: 'est natus enim nihil est dolore omnis voluptatem numquam\net omnis occaecati quod ullam at\nvoluptatem error expedita pariatur\nnihil sint nostrum voluptatem reiciendis et',
-  },
-  {
-    postId: 1,
-    id: 3,
-    name: 'odio adipisci rerum aut animi',
-    email: 'Nikita@garfield.biz',
-    body: 'quia molestiae reprehenderit quasi aspernatur\naut expedita occaecati aliquam eveniet laudantium\nomnis quibusdam delectus saepe quia accusamus maiores nam est\ncum et ducimus et vero voluptates excepturi deleniti ratione',
-  },
-  {
-    postId: 1,
-    id: 4,
-    name: 'alias odio sit',
-    email: 'Lew@alysha.tv',
-    body: 'non et atque\noccaecati deserunt quas accusantium unde odit nobis qui voluptatem\nquia voluptas consequuntur itaque dolor\net qui rerum deleniti ut occaecati',
-  },
-  {
-    postId: 1,
-    id: 5,
-    name: 'vero eaque aliquid doloribus et culpa',
-    email: 'Hayden@althea.biz',
-    body: 'harum non quasi et ratione\ntempore iure ex voluptates in ratione\nharum architecto fugit inventore cupiditate\nvoluptates magni quo et',
-  },
-];
+     "id":10,
+     "firstName":"Eleanora",
+     "lastName":"Price"
+  }
+]};
+
+const mockPosts = {
+   "posts":[
+      {
+         "id":10,
+         "title":"They rushed out the door.",
+         "body":"They rushed out the door, grabbing anything and everything they could think of they might need. There was no time to double-check to make sure they weren't leaving something important behind. Everything was thrown into the car and they sped off. Thirty minutes later they were safe and that was when it dawned on them that they had forgotten the most important thing of all.",
+         "userId":1,
+         "tags":[
+            "fiction",
+            "magical",
+            "history"
+         ],
+         "reactions":4
+      },
+      {
+         "id":14,
+         "title":"The paper was blank.",
+         "body":"The paper was blank. It shouldn't have been. There should have been writing on the paper, at least a paragraph if not more. The fact that the writing wasn't there was frustrating. Actually, it was even more than frustrating. It was downright distressing.",
+         "userId":1,
+         "tags":[
+            "mystery",
+            "english",
+            "love"
+         ],
+         "reactions":0
+      },
+      {
+         "id":95,
+         "title":"So what is the answer? How can you stand",
+         "body":"From the moment you go to prison you must put your cozy past firmly behind you. At the very threshold, you must say to yourself: “My life is over, a little early to be sure, but there’s nothing to be done about it. I shall never return to freedom.",
+         "userId":1,
+         "tags":[
+            "love",
+            "fiction",
+            "history"
+         ],
+         "reactions":2
+      }
+   ],
+   "total":3,
+   "skip":0,
+   "limit":3
+};
 
 module.exports = {
+  mockUsers,
   mockPosts,
-  mockComments,
 };

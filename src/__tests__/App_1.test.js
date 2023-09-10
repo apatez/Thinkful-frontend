@@ -1,24 +1,30 @@
 import React from 'react';
-import { act, render, screen } from '@testing-library/react';
-import { mockPosts } from '../../__mocks__/fileMock';
+import { render, screen, logRoles } from '@testing-library/react';
+import { mockUsers } from '../../__mocks__/fileMock';
 import App from '../App';
 require('jest-fetch-mock');
 
-describe('User Posts', () => {
+describe('User Names', () => {
    afterEach(() => jest.resetAllMocks());
-  test('displays user posts', async () => {
+  test('display user names', async () => {
     jest.spyOn(global, 'fetch').mockImplementationOnce(() => {
       return Promise.resolve({
-        json: () => Promise.resolve(mockPosts),
+        json: () => Promise.resolve(mockUsers),
       });
     });
-    await act(async () => {
-      render(<App />);
-    });
+    await render(<App />);
+    
 
     const firstPost = await screen.findByText(
-      /suscipit suscipit recusandae consequuntur expedita/i
+      /^Terry Medhurst$/
     );
+
     expect(firstPost).toBeDefined();
+
+    const lastPost = await screen.findByText(
+      /^Eleanora Price$/
+    );
+
+    expect(lastPost).toBeDefined();
   });
 });

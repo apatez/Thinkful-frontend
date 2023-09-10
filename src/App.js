@@ -1,33 +1,31 @@
 import React, { useEffect, useState } from 'react';
-// import PostDetail from './PostDetail';
 
 function App() {
+  const [users, setUsers] = useState([]);
   const [posts, setPosts] = useState([]);
-  const [comments, setComments] = useState([]);
 
   useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/posts?userId=1')
+    fetch('https://dummyjson.com/users?limit=10&select=firstName,lastName')
       .then((response) => response.json())
-      .then(setPosts);
+      .then(({users}) => setUsers(users));
   }, []);
 
-  function getComments(id) {
-    fetch(`https://jsonplaceholder.typicode.com/posts/${id}/comments`)
+  function getPosts(id) {
+    fetch(`https://dummyjson.com/posts/user/${id}`)
       .then((response) => response.json())
-      .then(setComments);
+      .then(({posts}) => setPosts(posts));
   }
 
   return (
     <div className="App">
-      {posts.map((post) => (
-        <div key={post.id}>
-          <h2>{post.title}</h2>
-          <p onClick={() => getComments(post.id)}>{post.body}</p>
+      {users.map((user) => (
+        <div key={user.id}>
+          <h2 onClick={() => getPosts(user.id)}>{user.firstName} {user.lastName}</h2>
           {
-            comments.map((comment) => (
-              post.id === comment.postId && 
-              <div key={comment.id} style={{border: '1px solid red'}}>
-                <p>{comment.body}</p>
+            posts.map((post) => (
+              user.id === post.userId && 
+              <div key={post.id} style={{border: '1px solid red'}}>
+                <p>{post.body}</p>
               </div>
             ))
           }

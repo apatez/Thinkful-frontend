@@ -15,13 +15,10 @@ The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
 ### `setup`
-https://dummyjson.com/
+https://dummyjson.com/users?limit=10&select=firstName,lastName
 
-https://dummyjson.com/products?limit=10
+https://dummyjson.com/posts/user/1
 
-https://dummyjson.com/users?limit=10
-
-https://dummyjson.com/posts/1
 
 ### `npm test`
 
