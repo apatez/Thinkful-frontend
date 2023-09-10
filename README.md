@@ -2,7 +2,8 @@
 
 This exercise will prepare you for the frontend interview. Read the instructions carefully and get the tests to pass.
 
-Use console.log often to help with troubleshooting
+- Use console.log often to help with troubleshooting
+- Open a new terminal and run ```npm test``` to run tests
 
 ### `Requirements`
 
